@@ -1,0 +1,106 @@
+{
+    "name": "InputMaps",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "d5db360c-b6c9-458e-a584-7f19866fc61e",
+            "actions": [
+                {
+                    "name": "Touch Position",
+                    "type": "PassThrough",
+                    "id": "9a908d91-c617-4c61-8067-e6ec0c8ef2c4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Touch Button",
+                    "type": "PassThrough",
+                    "id": "8f08dbd1-7c23-434b-9cff-7b19abb93da4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mouse Button",
+                    "type": "Button",
+                    "id": "a687d915-5e60-427b-85e7-7cbc3daad516",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Mouse Position",
+                    "type": "PassThrough",
+                    "id": "27b86cb4-f651-461d-8ce3-a679ff88236c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ade3b34c-9751-4db6-ab7d-4f6b5e2a2fb3",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Touch Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f48da84-23be-4147-b2a8-c44bea5b88d1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "639c96db-b90c-4fef-984b-61d8b76784c2",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83935fdc-0b02-473f-93c8-19d4796e0897",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mobile",
+            "bindingGroup": "Mobile",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
