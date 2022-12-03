@@ -121,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca669f5cf43514db4b10b977cf6543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bluePieces:
+  _playerAPieces:
   - {fileID: 3565547464145084381, guid: dcfb5cda50ad5384594abc8ace4d6d6b, type: 3}
   - {fileID: 6708471876065642030, guid: 89c71f0f034b20b4eb67e55ed05e42bc, type: 3}
   - {fileID: 635557651472506767, guid: f4aba325134678549adea571144d2508, type: 3}
-  _redPieces:
+  _playerBPieces:
   - {fileID: 2208567438600268901, guid: 9fb7c5046deabe549abd44b3e8d7fcb4, type: 3}
   - {fileID: 8340461127781086592, guid: fbfc26ced79590d49b886977158492bc, type: 3}
   - {fileID: 3472404589861854828, guid: 676e9ca91e15d3b48953e75d346218fa, type: 3}

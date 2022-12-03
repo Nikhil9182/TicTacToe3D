@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
         {
-            Debug.Log(hit.transform.name);
+            GameManager.Instance.PlayTurn(hit.transform.gameObject);
         }
     }
 }

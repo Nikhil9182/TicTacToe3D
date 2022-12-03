@@ -3,33 +3,50 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class UIOfflineController : MonoBehaviour
 {
     //Serialized Fields
-    [Header("Components"), Space(10)]
+    [SerializeField]
+    private Button[] _playerABtn = new Button[3];
+    [SerializeField]
+    private Button[] _playerBBtn = new Button[3];
 
-    [SerializeField]
-    private List<TextMeshProUGUI> _upperUIPieceCountText = new List<TextMeshProUGUI>();
-    [SerializeField]
-    private List<TextMeshProUGUI> _lowerUIPieceCountText = new List<TextMeshProUGUI>();
-    [SerializeField]
-    private List<Button> _upperUIPieceButton = new List<Button>();
-    [SerializeField]
-    private List<Button> _lowerUIPieceButton = new List<Button>();
-    [SerializeField]
-    private Image _upperUITimer, _lowerUITimer;
-    [SerializeField]
-    private Text _upperUITimerText, _lowerUITimerText;
-    [SerializeField]
-    private Sprite _blueBar, _pinkBar;
+    private void Start()
+    {
+        InitializeVariables();
+    }
 
-    [Header("Variables"), Space(10)]
+    private void InitializeVariables()
+    {
+        UISwitch();
+    }
 
-    [SerializeField]
-    private float _maxTimeForEachTure = 10f;
+    private void OnEnable() => GameManager.Instance.UIPlayerSwitcher += UISwitch;
+    private void OnDisable() => GameManager.Instance.UIPlayerSwitcher -= UISwitch;
 
+    public void PieceSelect(int index)
+    {
+        GameManager.Instance.PlayerPiece = (Piece)index;
+        Debug.Log(GameManager.Instance.PlayerPiece);
+    }
 
-    //Private Variables
-    private float _timer = 0f;
+    private void UISwitch()
+    {
+        if(GameManager.Instance.PlayerTurn == Turn.PLAYER_A_TURN)
+        {
+            foreach (var btn in _playerABtn)
+                btn.interactable = true;
+            foreach (var btn in _playerBBtn)
+                btn.interactable = false;
+        }
+        else
+        {
+            foreach (var btn in _playerABtn)
+                btn.interactable = false;
+            foreach (var btn in _playerBBtn)
+                btn.interactable = true;
+        }
+    }
 }

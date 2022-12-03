@@ -5,14 +5,6 @@ public enum TileTaken
     PLAYER_B_TAKEN
 }
 
-public enum TilePiece
-{
-    NONE = 0,
-    SMALL = 1,
-    MEDIUM = 2,
-    LARGE = 3
-}
-
 public enum GameMode
 {
     NONE,
@@ -27,7 +19,7 @@ public enum Turn
     PLAYER_B_TURN
 }
 
-public enum PieceSelected
+public enum Piece
 {
     NONE = -1,
     SMALL = 0,

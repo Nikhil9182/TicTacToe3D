@@ -7,9 +7,8 @@ public class Tile : MonoBehaviour
     #region Tile Private Members
     private int _index;
     private Vector3 _position;
-    private Material _material;
     private TileTaken _tileTaken;
-    private TilePiece _currentTilePiece;
+    private Piece _currentTilePiece;
     #endregion
 
     #region Tile Properties
@@ -23,6 +22,19 @@ public class Tile : MonoBehaviour
         _index = tileIndex;
         _position = tilePosition;
         _tileTaken = tileTaken;
-        _material = GetComponent<MeshRenderer>().material;
+        _currentTilePiece = Piece.NONE;
+    }
+
+    public bool IsValid()
+    {
+        if ((int)GameManager.Instance.PlayerPiece > (int)_currentTilePiece && (int)GameManager.Instance.PlayerTurn != (int)_tileTaken)
+        {
+            _currentTilePiece = GameManager.Instance.PlayerPiece;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
